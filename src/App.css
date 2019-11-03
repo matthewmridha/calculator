@@ -1,22 +1,179 @@
-.App {
-  text-align: center;
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+    font-family: "Digital";
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
 }
 
-.App-logo {
-  height: 40vmin;
+:root {
+    --red: rgb(128, 0, 0);
+    --orange: rgb(230, 92, 0);
+    --lightGrey: rgb(102, 102, 102);
+    --darkGrey: rgb(51, 51, 51);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.calculator {
+    width: 350px;
+    height: auto;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: digital;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #09d3ac;
+#screen {
+    background: black;
+    color: white;
+    font-size: 45px;
+    line-height: 48px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    justify-content: center;
+    width: 350px;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#display {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+}
+
+#formula {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+}
+
+button {
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 18px;
+}
+
+button:hover {
+    box-shadow: 0px 0px 2px 1px white inset;
+}
+
+.buttons {
+    display: grid;
+    width: 350px;
+    height: 350px;
+    grid-gap: 1px;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow-x: hiddem;
+    overflow-y: hidden;
+    grid-template-areas: "ac delete divide multiply" "seven eight nine subtract" "four five six add" "one two three equal" "decimal zero zero equal";
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#six {
+    grid-area: six;
+}
+
+#five {
+    grid-area: five;
+}
+
+#four {
+    grid-area: four;
+}
+
+#three {
+    grid-area: three;
+}
+
+#two {
+    grid-area: two;
+}
+
+#one {
+    grid-area: one;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#add {
+    grid-area: add;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#equals {
+    grid-area: equal;
+    background: var(--orange);
+    font-weight: bold;
+}
+
+#clear {
+    grid-area: ac;
+    background: var(--red);
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#delete {
+    grid-area: delete;
+    background: var(--red);
+}
+
+.operators {
+    background: var(--darkGrey);
+}
+
+.numbers {
+    background: var(--lightGrey);
+}
+
+@media (max-width: 450px) {
+    .calculator {
+        width: 100vw;
+        height: 100vh;
+        padding: 0px;
+        border-radius: 0px;
+    }
+    #screen {
+        width: 90vw;
+        padding: 0px;
+    }
+    .buttons {
+        width: 90vw;
+    }
 }
